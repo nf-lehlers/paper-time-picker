@@ -209,11 +209,13 @@ If you include this element as part of `paper-dialog`, use the class
                     </template>
                 </iron-selector>
 
-                <iron-selector class="period" attr-for-selected="name" selected="{{period}}">
-                    <div name="AM">AM</div>
-                        <div name="PM">PM</div>
+                <template is="dom-if" if="[[!isTwentyFourHours]]">
+                   <iron-selector class="period" attr-for-selected="name" selected="{{period}}">
+                       <div name="AM">AM</div>
+                           <div name="PM">PM</div>
 
-                </iron-selector>
+                   </iron-selector>
+                </template>
             </div>
             <div id="clockArea">
                 <div>
@@ -221,8 +223,8 @@ If you include this element as part of `paper-dialog`, use the class
                                          selected="{{view}}"
                                          entry-animation="fade-in-animation" exit-animation="fade-out-animation">
                         <neon-animatable class="clock-animatable" name="hours">
-                            <paper-clock-selector class="clock" id="hourClock" count="12" step="1" twenty-four-hours
-                                                  animated="[[animated]]" selected="{{hour12}}"></paper-clock-selector>
+                           <paper-clock-selector class="clock" id="hourClock" count="12" step="1" twenty-four-hours
+                                                 animated="[[animated]]" selected="{{hour}}"></paper-clock-selector>
                         </neon-animatable>
                         <neon-animatable class="clock-animatable" name="minutes">
                             <paper-clock-selector class="clock" id="minuteClock" count="60" step="5"
