@@ -443,7 +443,8 @@ If you include this element as part of `paper-dialog`, use the class
                     var hour = parseInt(match[1]);
                     var minute = parseInt(match[2]);
                     var second = match[4] ? parseInt(match[4]) : 0;
-                    var period = match[6] ? (match[6][0].toUpperCase() + 'M') : 'AM';
+                  //   var period = match[6] ? (match[6][0].toUpperCase() + 'M') : 'AM';
+                    var period = this.period;
                     if (period === 'PM' && hour < 12) {
                         hour = (hour + 12) % 24;
                     } else if (period === 'AM' && hour === 12) {
