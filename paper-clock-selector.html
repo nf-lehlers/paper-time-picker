@@ -547,6 +547,7 @@
 
                   var selected = Math.round(theta / intervalRad) ;
 
+
                   // determine the selected number
                   if (distance < 88) {
                       selected =  selected === 0 ? 24 : Math.round(theta / intervalRad) + 12;
@@ -554,6 +555,9 @@
                       this._handY = this._numbers24[0].y;
                   }else {
                       selected = Math.round(theta / intervalRad);
+                      if(selected == 0){
+                          selected = 12;
+                      }
                       this._handX = this._numbers[0].x;
                       this._handY = this._numbers[0].y;
                   }
